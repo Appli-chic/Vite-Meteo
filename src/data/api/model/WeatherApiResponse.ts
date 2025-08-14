@@ -6,8 +6,8 @@ export default class WeatherApiResponse {
   readonly timezone: string
   readonly timezone_abbreviation: string
   readonly elevation: number
-  readonly hourly_units: HourlyUnits
-  readonly hourly: Hourly
+  readonly hourly_units: HourlyUnitsResponse
+  readonly hourly: HourlyResponse
 
   constructor(
     latitude: number,
@@ -17,8 +17,8 @@ export default class WeatherApiResponse {
     timezone: string,
     timezone_abbreviation: string,
     elevation: number,
-    hourly_units: HourlyUnits,
-    hourly: Hourly,
+    hourly_units: HourlyUnitsResponse,
+    hourly: HourlyResponse,
   ) {
     this.latitude = latitude
     this.longitude = longitude
@@ -32,7 +32,7 @@ export default class WeatherApiResponse {
   }
 }
 
-class Hourly {
+class HourlyResponse {
   readonly time: [string]
   readonly temperature_2m: [number]
 
@@ -42,7 +42,7 @@ class Hourly {
   }
 }
 
-class HourlyUnits {
+class HourlyUnitsResponse {
   readonly time: string
   readonly temperature_2m: string
 
