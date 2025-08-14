@@ -1,8 +1,8 @@
 import type WeatherApiResponse from "../../data/api/model/WeatherApiResponse.ts";
 
 export default class Weather {
-  latitude: number
-  longitude: number
+  readonly latitude: number
+  readonly longitude: number
 
   constructor(latitude: number, longitude: number) {
     this.latitude = latitude;
