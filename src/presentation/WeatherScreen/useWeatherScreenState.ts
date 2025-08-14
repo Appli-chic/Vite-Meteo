@@ -14,7 +14,7 @@ export default function useWeatherScreenState() {
     }
 
     weatherApi()
-  }, [])
+  })
 
   return uiState
 }

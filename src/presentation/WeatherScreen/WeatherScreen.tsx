@@ -1,5 +1,6 @@
 import './WeatherScreen.css'
 import useWeatherScreenState, {type FilledUiState, type LoadingUiState} from "./useWeatherScreenState.ts";
+import type Weather from "../../business/model/Weather.ts";
 
 function WeatherScreen() {
   const uiState = useWeatherScreenState()
@@ -16,7 +17,7 @@ function renderScreen(uiState: LoadingUiState | FilledUiState) {
     case 'loading':
       return renderLoadingScreen();
     case 'filled':
-      return renderFilledScreen(uiState);
+      return renderFilledScreen(uiState.weather);
   }
 }
 
@@ -24,11 +25,14 @@ function renderLoadingScreen() {
   return <div>Loading</div>;
 }
 
-function renderFilledScreen(uiState: FilledUiState) {
+function renderFilledScreen(weather: Weather) {
   return (
     <div>
-      Latitude: {uiState.weather.latitude}
-      Longitude: {uiState.weather.longitude}
+      {
+        weather.weatherDataList.map((weatherElement) => (
+          <div>{weatherElement.date}: {weatherElement.temperature}</div>
+        ))
+      }
     </div>
   );
 }

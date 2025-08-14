@@ -33,10 +33,10 @@ export default class WeatherApiResponse {
 }
 
 class HourlyResponse {
-  readonly time: [string]
-  readonly temperature_2m: [number]
+  readonly time: string[]
+  readonly temperature_2m: number[]
 
-  constructor(time: [string], temperature_2m: [number]) {
+  constructor(time: string[], temperature_2m: number[]) {
     this.time = time
     this.temperature_2m = temperature_2m
   }
