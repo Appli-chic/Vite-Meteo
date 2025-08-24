@@ -32,8 +32,8 @@ function renderFilledScreen(weather: Weather) {
         <div key={day.date} className='day-section'>
           <div className='day-title'>{day.date}</div>
           {day.weatherDataList.map((weatherElement) => (
-            <div key={weatherElement.date} className='hourly-temperature-container'>
-              {weatherElement.date} - {weatherElement.temperature}
+            <div key={weatherElement.hour} className='hourly-temperature-container'>
+              {weatherElement.hour} - {weatherElement.temperature}
             </div>
           ))}
         </div>

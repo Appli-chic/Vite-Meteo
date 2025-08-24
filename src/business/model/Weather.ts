@@ -22,9 +22,9 @@ export default class Weather {
   private static getDaysFromApi(apiWeather: WeatherApiResponse): DayWeather[] {
     const grouped: { [date: string]: WeatherData[] } = {};
     for (let i = 0; i < apiWeather.hourly.time.length; i++) {
-      const fullDate = apiWeather.hourly.time[i]; // e.g., "2025-08-23T01:00"
-      const date = fullDate.split('T')[0]; // e.g., "2025-08-23"
-      const weatherData = new WeatherData(fullDate, apiWeather.hourly.temperature_2m[i]);
+      const fullDate = apiWeather.hourly.time[i];
+      const [date, hour] = fullDate.split('T');
+      const weatherData = new WeatherData(hour, apiWeather.hourly.temperature_2m[i]);
       if (!grouped[date]) grouped[date] = [];
       grouped[date].push(weatherData);
     }
@@ -43,11 +43,11 @@ export class DayWeather {
 
 // TODO: Remove export
 export class WeatherData {
-  readonly date: string
+  readonly hour: string
   readonly temperature: number
 
-  constructor(date: string, temperature: number) {
-    this.date = date
+  constructor(hour: string, temperature: number) {
+    this.hour = hour
     this.temperature = temperature
   }
 }
