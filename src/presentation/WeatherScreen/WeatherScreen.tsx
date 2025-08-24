@@ -29,11 +29,12 @@ function renderFilledScreen(weather: Weather) {
   return (
     <div className='day-container'>
       {weather.days.map((day) => (
-        <div key={day.date} className='day-section'>
-          <div className='day-title'>{day.date}</div>
+        <div key={day.date} className='weather-day-container'>
+          <div className='weather-day-header'>{day.date}</div>
           {day.weatherDataList.map((weatherElement) => (
-            <div key={weatherElement.hour} className='hourly-temperature-container'>
-              {weatherElement.hour} - {weatherElement.temperature}
+            <div key={weatherElement.hour} className='weather-row'>
+              <div>{weatherElement.hour}</div>
+              <div className='weather-temp'>{weatherElement.temperature}</div>
             </div>
           ))}
         </div>

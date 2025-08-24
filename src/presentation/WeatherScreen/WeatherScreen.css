@@ -1,7 +1,41 @@
 .day-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 24px;
+}
+
+.weather-day-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-day-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.weather-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.weather-row:last-child {
+  border-bottom: none;
+}
+
+.weather-temp {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #1976d2;
 }
 
 .hourly-temperature-container {

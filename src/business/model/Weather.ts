@@ -32,7 +32,7 @@ export default class Weather {
   }
 }
 
-export class DayWeather {
+class DayWeather {
   readonly date: string;
   readonly weatherDataList: WeatherData[];
   constructor(date: string, weatherDataList: WeatherData[]) {
@@ -41,8 +41,7 @@ export class DayWeather {
   }
 }
 
-// TODO: Remove export
-export class WeatherData {
+class WeatherData {
   readonly hour: string
   readonly temperature: number
 
