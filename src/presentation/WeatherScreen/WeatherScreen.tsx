@@ -1,5 +1,5 @@
 import './WeatherScreen.css'
-import useWeatherScreenState, {type FilledUiState, type LoadingUiState} from "./useWeatherScreenState.ts";
+import useWeatherScreenState, { type FilledUiState, type LoadingUiState } from "./useWeatherScreenState.ts";
 import type Weather from "../../business/model/Weather.ts";
 
 function WeatherScreen() {
@@ -27,10 +27,12 @@ function renderLoadingScreen() {
 
 function renderFilledScreen(weather: Weather) {
   return (
-    <div>
+    <div className='day-container'>
       {
         weather.weatherDataList.map((weatherElement) => (
-          <div>{weatherElement.date}: {weatherElement.temperature}</div>
+          <div className='hourly-temperature-container'>
+            {weatherElement.date} - {weatherElement.temperature}
+          </div>
         ))
       }
     </div>

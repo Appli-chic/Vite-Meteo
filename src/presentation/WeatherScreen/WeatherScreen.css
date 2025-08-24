@@ -1,0 +1,10 @@
+.day-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hourly-temperature-container {
+  background-color: rgb(195, 217, 255);
+  padding: 8px;
+}

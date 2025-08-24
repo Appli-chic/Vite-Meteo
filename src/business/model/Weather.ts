@@ -35,7 +35,8 @@ export default class Weather {
   }
 }
 
-class WeatherData {
+// TODO: Remove export
+export class WeatherData {
   readonly date: string
   readonly temperature: number
 
