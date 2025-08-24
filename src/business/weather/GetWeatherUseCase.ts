@@ -1,4 +1,4 @@
-import Weather, { WeatherData } from "../model/Weather.ts";
+import Weather from "../model/Weather.ts";
 import WeatherApi from "../../data/api/WeatherApi.ts";
 
 export default class GetWeatherUseCase {

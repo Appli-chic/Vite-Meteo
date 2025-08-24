@@ -28,13 +28,16 @@ function renderLoadingScreen() {
 function renderFilledScreen(weather: Weather) {
   return (
     <div className='day-container'>
-      {
-        weather.weatherDataList.map((weatherElement) => (
-          <div className='hourly-temperature-container'>
-            {weatherElement.date} - {weatherElement.temperature}
-          </div>
-        ))
-      }
+      {weather.days.map((day) => (
+        <div key={day.date} className='day-section'>
+          <div className='day-title'>{day.date}</div>
+          {day.weatherDataList.map((weatherElement) => (
+            <div key={weatherElement.date} className='hourly-temperature-container'>
+              {weatherElement.date} - {weatherElement.temperature}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
